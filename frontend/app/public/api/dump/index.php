@@ -5,3 +5,5 @@ require $api_dir."/api.php";
 use Everest\API;
 
 $api = new API();
+
+$api->data = $api->dump->entries;

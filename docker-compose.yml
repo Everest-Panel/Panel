@@ -9,6 +9,7 @@ services:
     restart: unless-stopped
     volumes:
       - /Everest/Frontend:/app
+      - /var/run/docker.sock:/var/run/docker.sock
     environment:
       - HANG=1
     depends_on:

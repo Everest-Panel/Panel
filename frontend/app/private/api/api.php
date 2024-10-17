@@ -3,6 +3,9 @@ namespace Everest;
 
 require __DIR__."/resources/assets/database.php";
 use Everest\Assets\Database;
+require __DIR__."/resources/assets/dump.php";
+use Everest\Assets\Dump;
+
 use Exception;
 use Error;
 
@@ -12,6 +15,7 @@ class API {
 
     public array $config;
     public Database $db;
+    public Dump $dump;
     public array $standard = [
         "state"=>null,
         "error"=>null,
@@ -31,6 +35,8 @@ class API {
         catch (Error|Exception $e) {
             $this->close($e->getMessage());
         }
+        // Load Dump
+        $this->dump = new Dump(true);
     }
 
     public function __destruct()

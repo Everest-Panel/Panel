@@ -1,5 +1,93 @@
-div#login {
-    width: 100%;
-    display: flex;
+/* Body Override */
+body {
+    /* background: linear-gradient(45deg, #abb2a7, #5b7944); */
+    background-attachment: fixed;
+    align-items: center;
     justify-content: center;
+    height: 100vh;
 }
+
+div#login {
+    width: 400px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+    div#login div.icon {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 90%;
+    }
+    div#login div.title {
+        padding: 0px 0px 10px 0px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 2.5rem;
+        font-weight: bold;
+        width: 90%;
+    }
+    div#login div.bars {
+        display: flex;
+        align-items: center;
+        justify-content: space-evenly;
+        width: 100%;
+    }
+        div#login div.bars div.bar {
+            height: 10px;
+            width: calc(40%);
+            background: var(--secondary);
+            border-radius: var(--radius);
+        }
+        div#login div.bars div.bar.active {
+            background: var(--primary);
+        }
+    div#login div.inputs {
+        margin: 10px 0px 0px 0px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;  
+        width: 100%;
+    }
+        div#login div.inputs div.input {
+            padding: 5px 0px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            width: 90%;
+        }
+        div#login div.inputs div.input div.small {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+        }
+            div#login div.inputs div.input div.small div.text {
+                color: #707070;
+                font-weight: bold;
+                transition: var(--transition);
+            }
+            div#login div.inputs div.input div.small div.text:hover {
+                cursor: pointer;
+                color: #ffffff;
+            }
+        div#login div.inputs div.input div.submit {
+            width: 100%;
+            height: 30px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            font-weight: bold;
+            padding: 5px;
+            border-radius: var(--radius);
+            background: var(--primary);
+            transition: var(--transition);
+        }
+        div#login div.inputs div.input div.submit:hover {
+            background: var(--secondary);
+            cursor: pointer;
+        }

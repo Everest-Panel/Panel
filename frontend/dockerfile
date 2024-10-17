@@ -1,0 +1,16 @@
+FROM debian:bookworm
+
+RUN apt update && apt upgrade -y && apt install p7zip-full nginx php8.2-fpm php8.2-mysqli -y
+
+COPY app /frontend
+RUN chmod -R 777 /frontend
+RUN mkdir /app
+
+COPY default /etc/nginx/sites-available/default
+COPY php.ini /etc/php/8.2/fpm/php.ini
+COPY www.conf /etc/php/8.2/fpm/pool.d/www.conf
+
+COPY startup.sh /startup.sh
+RUN chmod +x /startup.sh
+
+ENTRYPOINT [ "/startup.sh" ]

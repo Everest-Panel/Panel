@@ -1,0 +1,13 @@
+{
+    "SYSTEM":{
+        
+    },
+    "DATABASE":{
+        "HOSTNAME":"database",
+        "USERNAME":"Everest",
+        "PASSWORD":"EverestPassword1234*",
+        "DATABASE":"Everest",
+        "PORT":3306,
+        "SOCKET":null
+    }
+}

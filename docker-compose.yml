@@ -1,0 +1,43 @@
+name: everest
+
+services:
+
+  frontend:
+    container_name: everest-frontend
+    build: frontend/.
+    image: everest/frontend:latest
+    restart: unless-stopped
+    volumes:
+      - /Everest/Frontend:/app
+    environment:
+      - HANG=1
+    depends_on:
+      - database
+    links:
+      - database
+    deploy:
+      resources:
+        limits:
+          cpus: "1"
+          memory: 1G
+    ports:
+      - "80:80/tcp"
+    
+  database:
+    container_name: everest-database
+    image: mariadb:latest
+    restart: unless-stopped
+    volumes:
+      - /Everest/Database:/var/lib/mysql
+    environment:
+      - MARIADB_USER=Everest
+      - MARIADB_PASSWORD=EverestPassword1234*
+      - MARIADB_ROOT_PASSWORD=EverestRootPassword1234*
+      - MARIADB_DATABASE=Everest
+    deploy:
+      resources:
+        limits:
+          cpus: "1"
+          memory: 1G
+    ports:
+      - "3306:3306/tcp"

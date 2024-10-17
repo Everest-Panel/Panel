@@ -1,0 +1,6 @@
+{
+    "DATABASE_TABLES":[
+        "Users",
+        "Crests"
+    ]
+}

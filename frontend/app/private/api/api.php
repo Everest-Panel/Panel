@@ -5,6 +5,8 @@ require __DIR__."/resources/assets/database.php";
 use Everest\Assets\Database;
 require __DIR__."/resources/assets/dump.php";
 use Everest\Assets\Dump;
+require __DIR__."/resources/assets/check.php";
+use Everest\Assets\Check;
 
 use Exception;
 use Error;
@@ -16,6 +18,7 @@ class API {
     public array $config;
     public Database $db;
     public Dump $dump;
+    public Check $check;
     public array $standard = [
         "state"=>null,
         "error"=>null,
@@ -37,6 +40,8 @@ class API {
         }
         // Load Dump
         $this->dump = new Dump(true);
+        // Load Check
+        $this->check = new Check();
     }
 
     public function __destruct()

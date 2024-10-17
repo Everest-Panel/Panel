@@ -1,0 +1,17 @@
+:root {
+    --background: #20221d;
+}
+body {
+    display: flex;
+    align-items: center;
+    background: var(--background);
+    background-color: var(--background);
+    user-select: none;
+}
+
+img.icon {
+    filter: invert(100%);
+    height: 100%;
+    width: 100%;
+    object-position: center;
+}

@@ -9,6 +9,7 @@ services:
     restart: unless-stopped
     volumes:
       - /Everest/Frontend:/app
+      - /home/Everest/Frontend:/app
     environment:
       - HANG=1
     depends_on:
@@ -45,7 +46,7 @@ services:
     image: mariadb:latest
     restart: unless-stopped
     volumes:
-      - /Everest/Database:/var/lib/mysql
+      - /home/Everest/Database:/var/lib/mysql
     environment:
       - MARIADB_USER=Everest
       - MARIADB_PASSWORD=EverestPassword1234*

@@ -1,6 +1,6 @@
 FROM debian:bookworm
 
-RUN apt update && apt upgrade -y && apt install p7zip-full nginx php8.2-fpm php8.2-mysqli -y
+RUN apt update && apt upgrade -y && apt install p7zip-full nginx php8.2-fpm php8.2-mysqli mariadb-client -y
 
 COPY app /frontend
 RUN chmod -R 777 /frontend

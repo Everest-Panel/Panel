@@ -31,18 +31,26 @@
         case $argv[1] == "-t" || $argv[1] == "--tables":
             $db->query("SELECT * FROM information_schema.tables where TABLE_SCHEMA = 'Everest'", $return);
             echo("Tables:\n");
+            if (count($return) == 0) {
+                echo(" No Tables Defined\n");
+            }
             foreach ($return as $table) {
                 echo(" ".$colors["primary"].$table["TABLE_NAME"].$colors["reset"]."\n");
             }
             break;
         case $argv[1] == "-u" || $argv[1] == "--users":
-            $db->query("SELECT * FROM Everest.Users", $return);
+            try {
+                $db->query("SELECT * FROM Everest.Users", $return);
+            }
+            catch (Error|Exception $e) {
+                $return = [];
+            }
             echo("Users:\n");
             if (count($return) == 0) {
                 echo(" No Users In Database\n");
             }
             foreach ($return as $table) {
-                echo(" ".$colors["primary"].$table["uuid"].$colors["reset"]."\n");
+                echo(" ".$colors["primary"].$table["uuid"]." ".$table["fname"]." ".$table["lname"]." ".$table["email"].$colors["reset"]."\n");
             }
     }
 

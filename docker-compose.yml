@@ -8,7 +8,7 @@ services:
     image: everest/frontend:latest
     restart: unless-stopped
     volumes:
-      - /Everest/Frontend:/app
+      - /home/Everest/Frontend:/app
       - /var/run/docker.sock:/var/run/docker.sock
     environment:
       - HANG=1
@@ -29,7 +29,7 @@ services:
     image: mariadb:latest
     restart: unless-stopped
     volumes:
-      - /Everest/Database:/var/lib/mysql
+      - /home/Everest/Database:/var/lib/mysql
     environment:
       - MARIADB_USER=Everest
       - MARIADB_PASSWORD=EverestPassword1234*

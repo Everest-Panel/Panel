@@ -1,0 +1,60 @@
+name: everest
+
+services:
+
+  frontend:
+    container_name: everest-frontend
+    build: frontend/.
+    image: everest/frontend:latest
+    restart: unless-stopped
+    volumes:
+      - <YOUR APP DIR>:/app
+    environment:
+      - HANG=1
+    depends_on:
+      - database
+    links:
+      - database
+    deploy:
+      resources:
+        limits:
+          cpus: "1"
+          memory: 1G
+    ports:
+      - "80:80/tcp"
+
+  stream:
+    container_name: everest-stream
+    build: stream/.
+    image: everest/stream:latest
+    restart: unless-stopped
+    volumes:
+      - <YOUR STREAM DIR>:/stream
+      - /var/run/docker.sock:/var/run/docker.sock
+    environment:
+      - HOSTNAME=127.0.0.1
+      - TOKEN=
+    deploy:
+      resources:
+        limits:
+          cpus: "1"
+          memory: 1G
+
+  database:
+    container_name: everest-database
+    image: mariadb:latest
+    restart: unless-stopped
+    volumes:
+      - <YOUR DATABASE DIR>:/var/lib/mysql
+    environment:
+      - MARIADB_USER=Everest
+      - MARIADB_PASSWORD=EverestPassword1234*
+      - MARIADB_ROOT_PASSWORD=EverestRootPassword1234*
+      - MARIADB_DATABASE=Everest
+    deploy:
+      resources:
+        limits:
+          cpus: "1"
+          memory: 1G
+    ports:
+      - "3306:3306/tcp"

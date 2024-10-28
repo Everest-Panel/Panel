@@ -1,0 +1,80 @@
+div#servers {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+    div#servers div.server {
+        position: relative;
+        margin: 5px 0px;
+        width: 95%;
+        height: 300px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        overflow: hidden;
+        border-radius: var(--radius);
+    }
+        div#servers div.server div.banner {
+            height: 100%;
+            width: 100%;
+            position: absolute;
+            z-index: -1;
+        }
+            div#servers div.server div.banner img {
+                height: 100%;
+                width: 100%;
+                object-position: center;
+                object-fit: cover;
+                filter: brightness(40%);
+            }
+        div#servers div.server div.stats {
+            width: 100%;
+            display: flex;
+            justify-content: space-evenly;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+            div#servers div.server div.stats div.stat {
+                width: calc((100% / 4) - 2%);
+                padding: 10px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                flex-direction: column;
+                /* background: #000000a0; */
+                border-radius: var(--radius);
+            }
+                div#servers div.server div.stats div.stat div.icon {
+                    height: 50px;
+                    width: 50px;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                }
+                div#servers div.server div.stats div.stat div.text {
+                    margin: 5px 0px 0px 0px;
+                    font-weight: bold;
+                    text-align: center;
+                }
+                div#servers div.server div.stats div.stat div.graph {
+                    position: relative;
+                    height: 15px;
+                    width: 100px;
+                    border-radius: var(--radius);
+                }
+                    div#servers div.server div.stats div.stat div.graph div.total {
+                        height: 100%;
+                        width: 100%;
+                        background: linear-gradient(45deg, #46fd74, #fffc5d, #ff4343); 
+                        border-radius: var(--radius);
+                    }
+                    div#servers div.server div.stats div.stat div.graph div.dat {
+                        position: absolute;
+                        right: 0px;
+                        height: 100%;
+                        background: #000000d0;
+                        border-top-right-radius: var(--radius);
+                        border-bottom-right-radius: var(--radius);
+                    }

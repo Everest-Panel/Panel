@@ -8,8 +8,7 @@ services:
     image: everest/frontend:latest
     restart: unless-stopped
     volumes:
-      - /Everest/Frontend:/app
-      - /home/Everest/Frontend:/app
+      - /home/devone/Documents/GitHub/Panel/frontend/app:/app
     environment:
       - HANG=1
     depends_on:
@@ -30,7 +29,6 @@ services:
     image: everest/stream:latest
     restart: unless-stopped
     volumes:
-      - /Everest/Stream:/stream
       - /var/run/docker.sock:/var/run/docker.sock
     environment:
       - HOSTNAME=127.0.0.1
@@ -46,7 +44,7 @@ services:
     image: mariadb:latest
     restart: unless-stopped
     volumes:
-      - /home/Everest/Database:/var/lib/mysql
+      - /home/devone/Documents/GitHub/Panel/mariadb:/var/lib/mysql
     environment:
       - MARIADB_USER=Everest
       - MARIADB_PASSWORD=EverestPassword1234*

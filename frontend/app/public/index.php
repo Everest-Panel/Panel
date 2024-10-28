@@ -12,7 +12,7 @@
     <body>
         <div id="login">
             <div class="icon">
-                <img class="icon" alt="Everest Icon" draggable="false" src="http://localhost/api/dump/?type=images&file=Everest_Icon.png">
+                <img class="icon" alt="Everest Icon" draggable="false" src="/api/dump/?type=images&file=everest.png">
             </div>
             <div class="title">
                 Everest Login

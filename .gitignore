@@ -1,1 +1,4 @@
 frontend/app/private/api/resources/composer/vendor
+docker-compose.yml
+stream/env
+mariadb

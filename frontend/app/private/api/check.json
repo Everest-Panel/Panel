@@ -1,7 +1,6 @@
 {
     "DATABASE_TABLES":[
         "Users",
-        "Crests",
-        "Streams"
+        "Crests"
     ]
 }

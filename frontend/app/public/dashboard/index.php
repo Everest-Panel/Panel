@@ -83,7 +83,7 @@
                             <?php $statS = random_int(1, 70); echo $statS."%"?>
                         </div>
                         <div class="graph">
-                            <div class="dat" style="width: <?php echo($statS)."%"?>;"></div>
+                            <div class="dat" style="width: <?php echo 100-$statS."%"?>;"></div>
                             <div class="total"></div>
                         </div>
                     </div>

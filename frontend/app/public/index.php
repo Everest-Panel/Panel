@@ -10,6 +10,9 @@
         <link rel="stylesheet" type="text/css" href="/api/dump/?type=styles&file=login.css">
     </head>
     <body>
+        <div class="background">
+            <img src="/api/dump/?type=images&file=sphere.gif" />
+        </div>
         <div id="login">
             <div class="icon">
                 <img class="icon" alt="Everest Icon" draggable="false" src="/api/dump/?type=images&file=everest.png">

@@ -189,5 +189,6 @@
                 </div>
             </div>
         </div>
+        <script type="module" src="/api/dump/?type=scripts&file=dashboard.js"></script>
     </body>
 </html>

@@ -33,6 +33,10 @@ services:
     environment:
       - HOSTNAME=127.0.0.1
       - TOKEN=
+    depends_on:
+      - database
+    links:
+      - database
     deploy:
       resources:
         limits:
@@ -57,3 +61,5 @@ services:
           memory: 1G
     ports:
       - "3306:3306/tcp"
+
+  

@@ -1,48 +1,38 @@
-:root {
-    --background: #191a18;
-    --primary:#5b7944;
-    --secondary: #abb2a7;
-    --radius: 2px;
-    --transition: 0.2s;
-}
 body {
-    padding: unset;
-    margin: unset;
-    display: flex;
-    align-items: center;
-    background: var(--background);
-    background-color: var(--background);
-    user-select: none;
-    font-size: 1rem;
-    color: #ffffff;
-    font-family: "Arial";
+  padding: unset;
+  margin: unset;
+  display: flex;
+  align-items: center;
+  background: #191a18;
+  background-color: #191a18;
+  user-select: none;
+  font-size: 1rem;
+  color: #ffffff;
+  font-family: "Arial";
 }
-
 img.icon {
-    filter: invert(100%);
-    height: 100%;
-    width: 100%;
-    object-position: center;
+  filter: invert(100%);
+  height: 100%;
+  width: 100%;
+  object-position: center;
 }
-
 input {
-    outline: unset;
-    padding: 5px;
-    border: unset;
-    margin: unset;
-    border-radius: var(--radius);
-    font-family: inherit;
-    font-size: inherit;
-    text-indent: 5px;
-    background: #404040;
-    color: inherit;
-    width: 100%;
-    height: 30px;
+  outline: unset;
+  padding: 5px;
+  border: unset;
+  margin: unset;
+  border-radius: 2px;
+  font-family: inherit;
+  font-size: inherit;
+  text-indent: 5px;
+  background: #404040;
+  color: inherit;
+  width: 100%;
+  height: 30px;
 }
-
 label {
-    padding: 5px 0px;
-    font-size: 1.4rem;
-    font-family: inherit;
-    font-weight: bold;
+  padding: 5px 0px;
+  font-size: 1.4rem;
+  font-family: inherit;
+  font-weight: bold;
 }

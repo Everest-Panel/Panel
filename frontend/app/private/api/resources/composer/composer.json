@@ -1,6 +1,7 @@
 {
     "require": {
         "ramsey/uuid": "^4.7",
-        "ralouphie/mimey": "^1.0"
+        "ralouphie/mimey": "^1.0",
+        "scssphp/scssphp": "^1.13"
     }
 }

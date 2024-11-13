@@ -1,0 +1,37 @@
+[
+    {
+        "name":"library_capsule",
+        "size":"600x900",
+        "url":"https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/<APP-ID>/library_600x900.jpg"
+    },
+    {
+        "name":"library_capsule_2x",
+        "size":"600x900",
+        "url":"https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/<APP-ID>/library_600x900_2x.jpg"
+    },
+    {
+        "name":"library_logo",
+        "size":"1280x720",
+        "url":"https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/<APP-ID>/logo.png"
+    },
+    {
+        "name":"library_logo_2x",
+        "size":"1280x720",
+        "url":"https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/<APP-ID>/logo_2x.png"
+    },
+    {
+        "name":"library_hero",
+        "size":"3840x1240",
+        "url":"https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/<APP-ID>/library_hero.jpg"
+    },
+    {
+        "name":"library_hero_2x",
+        "size":"3840x1240",
+        "url":"https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/<APP-ID>/library_hero_2x.jpg"
+    },
+    {
+        "name":"store_capsule",
+        "size":"616x353",
+        "url":"https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/<APP-ID>/capsule_616x353.jpg"
+    }
+]

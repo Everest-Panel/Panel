@@ -1,0 +1,30 @@
+#!/bin/php8.2
+
+<?php
+
+require __DIR__."/resources/assets/database.php";
+use Everest\Assets\Database;
+
+$config = json_decode(file_get_contents(__DIR__."/config.json"), true);
+$config["DATABASE"]["HOSTNAME"] = "127.0.0.1";
+$color = [
+    "reset"=>"\e[39m",
+    "red"=>"\e[31m",
+    "green"=>"\e[32m",
+    "yellow"=>"\e[33m",
+    "blue"=>"\e[34m",
+    "magenta"=>"\e[35m",
+    "cyan"=>"\e[36m"
+];
+
+
+try {
+    echo sprintf("Connecting to %sDatabase%s", $color["blue"], $color["reset"]), PHP_EOL;
+    $db = new Database($config["DATABASE"]);
+}
+catch (Exception | Error $e) {
+    echo sprintf("%s".$e->getMessage()."%s", $color["red"], $color["reset"]), PHP_EOL;
+}
+
+
+echo sprintf("Database %sConnected%s", $color["green"], $color["reset"]), PHP_EOL;

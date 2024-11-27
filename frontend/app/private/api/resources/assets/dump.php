@@ -16,6 +16,7 @@ class Dump {
             $this->load("styles");
             $this->load("scripts");
             $this->load("images");
+            $this->load("videos");
 
         }
     }

@@ -2,4 +2,4 @@ frontend/app/private/api/resources/composer/vendor
 frontend/app/private/game_assets/assets
 docker-compose.yml
 stream/env
-mariadb
+mariadb/*

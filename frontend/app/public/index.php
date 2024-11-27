@@ -11,7 +11,9 @@
     </head>
     <body>
         <div class="background">
-            <img src="/api/dump/?type=images&file=sphere.gif" />
+            <video autoplay loop>
+                <source src="/api/dump/?type=videos&file=particles_floating.mp4" type="video/mp4">
+            </video>
         </div>
         <div id="login">
             <div class="icon">

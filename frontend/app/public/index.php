@@ -11,7 +11,7 @@
     </head>
     <body>
         <div class="background">
-            <video autoplay loop>
+            <video autoplay loop playsinline>
                 <source src="/api/dump/?type=videos&file=particles_floating.mp4" type="video/mp4">
             </video>
         </div>

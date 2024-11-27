@@ -49,6 +49,10 @@ div#login div.icon {
   justify-content: center;
   width: 90%;
 }
+div#login div.icon img {
+  height: 250px;
+  width: 250px;
+}
 div#login div.title {
   padding: 0px 0px 10px 0px;
   display: flex;

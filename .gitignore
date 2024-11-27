@@ -3,3 +3,4 @@ frontend/app/private/game_assets/assets
 docker-compose.yml
 stream/env
 mariadb/*
+stream/minecraft/paper/wbin

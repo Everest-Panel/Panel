@@ -1,0 +1,5 @@
+FROM openjdk:21
+
+COPY server.jar server.jar
+
+ENTRYPOINT [ "java", "server.jar", "nogui" ]

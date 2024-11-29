@@ -1,5 +1,9 @@
 FROM openjdk:21
 
-COPY server.jar server.jar
+COPY startup.sh startup.sh
+RUN chmod +x startup.sh
 
-ENTRYPOINT [ "java", "server.jar", "nogui" ]
+WORKDIR /server
+COPY eula.txt /server/eula.txt
+
+ENTRYPOINT ["/startup.sh"]

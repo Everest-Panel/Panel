@@ -30,10 +30,11 @@ if setup_version in versions:
             setup_download = downloads["downloads"]["application"]["name"]
             print(f'Found {setup_version} build {setup_build} file {setup_download}')
 
-            file = requests.api.get(f'https://api.papermc.io/v2/projects/paper/versions/{setup_version}/builds/{setup_build}/downloads/{setup_download}')
-            if file.status_code == 200:
-                serverJar = open("server.jar", "wb")
-                serverJar.write(file.content)
-                serverJar.close()
+            print(f"LINK: https://api.papermc.io/v2/projects/paper/versions/{setup_version}/builds/{setup_build}/downloads/{setup_download}")
+            # file = requests.api.get(f'https://api.papermc.io/v2/projects/paper/versions/{setup_version}/builds/{setup_build}/downloads/{setup_download}')
+            # if file.status_code == 200:
+            #     serverJar = open("server.jar", "wb")
+            #     serverJar.write(file.content)
+            #     serverJar.close()
 else:
     print(f"Invalid Version {setup_version}")

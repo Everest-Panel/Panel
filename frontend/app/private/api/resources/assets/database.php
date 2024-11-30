@@ -7,7 +7,7 @@ use Error;
 
 class Database {
 
-    protected mysqli $db;
+    public mysqli $db;
 
     public function __construct(array $db_config)
     {

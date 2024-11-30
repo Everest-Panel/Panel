@@ -3,5 +3,6 @@ frontend/app/private/game_assets/assets/
 stream/env
 mariadb/*
 stream/minecraft/paper/wbin/
-docker-compose.yml
 MC
+docker-compose-dev.yml
+docker-compose.yml

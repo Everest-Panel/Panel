@@ -2,6 +2,8 @@
 
 <?php
 
+error_reporting(0);
+
 require __DIR__."/resources/assets/database.php";
 use Everest\Assets\Database;
 
@@ -20,10 +22,31 @@ $color = [
 
 try {
     $db = new Database($config["DATABASE"]);
-    echo sprintf("Database %sConnected%s", $color["green"], $color["reset"]), PHP_EOL;
 }
 catch (Exception | Error $e) {
-    echo sprintf("Database %s".$e->getMessage()."%s", $color["red"], $color["reset"]), PHP_EOL;
+    try {
+        $config["DATABASE"]["HOSTNAME"] = "localhost";
+        $config["DATABASE"]["PORT"] = 6000;
+        $db = new Database($config["DATABASE"]);
+    } catch (Exception | Error $e) {
+        echo sprintf("Database %Failed%s %sInternal%s & %sExternal%s", $color["red"], $color["reset"], $color["blue"], $color["reset"], $color["yellow"], $color["reset"]), PHP_EOL;
+        exit();
+    }
 }
 
+echo sprintf("%sSetup %s1\n%sBackup %s2\n%sValidate %s3\n", $color["magenta"], $color["reset"], $color["blue"], $color["reset"], $color["green"], $color["reset"]);
 
+$task = readline("\n[2]: ");
+
+switch ($task) {
+    case 1:
+        echo "Setup";
+        break;
+    case null:
+    case 2:
+        echo "Backup";
+        break;
+    case 3:
+        echo "Validate";
+        break;
+}

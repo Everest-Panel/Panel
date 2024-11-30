@@ -1,6 +1,6 @@
 FROM debian:bookworm
 
-RUN apt update && apt upgrade -y && apt install p7zip-full python3-full python3-pip python3-venv -y
+RUN apt update && apt upgrade -y && apt install p7zip-full python3-full python3-pip python3-venv procps -y
 
 RUN mkdir /setup
 WORKDIR /setup

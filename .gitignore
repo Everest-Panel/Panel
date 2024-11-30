@@ -6,3 +6,6 @@ stream/minecraft/paper/wbin/
 MC
 docker-compose-dev.yml
 docker-compose.yml
+frontend/app/nginx-access.log
+frontend/app/nginx-error.log
+frontend/app/php-error.log

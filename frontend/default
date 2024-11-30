@@ -8,6 +8,9 @@ server {
 
 	server_name everest;
 
+	access_log /app/nginx-access.log;
+	error_log /app/nginx-error.log;
+
 	location / {
 		try_files $uri $uri/ =404;
 	}

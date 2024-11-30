@@ -1,5 +1,13 @@
 #!/bin/bash
 
+trap stop_processes TERM
+
+function stop_processes() {
+    echo "Stopping Softwares..."
+    pkill -15 nginx
+    pkill -15 php-fpm8.2
+    exit 1
+}
 CDate=$(date +"%Y_%m_%d_%H_%M_%S");
 
 if [ ! -f /app/installed ]; then
@@ -12,15 +20,11 @@ if [ ! -f /app/installed ]; then
     touch /app/installed
 fi
 
-nginx
 php-fpm8.2
+nginx
 
-tail -f /var/log/php8.2-fpm.log /var/log/nginx/error.log /var/log/nginx/access.log
-
-if [ ! -n "$HANG" ]; then
-    HANG=0;
-fi
-
-while [ $HANG == 1 ]; do
-    sleep 1;
+while [ true ]; do
+    sleep 1
 done
+
+# tail -f /var/log/php8.2-fpm.log /var/log/nginx/error.log /var/log/nginx/access.log

@@ -1,6 +1,6 @@
 #!/bin/env
 
-import docker, requests, os, json, time, signal
+import docker, requests, os, json, time, signal # type: ignore
 
 class GracefulKiller:
   kill_now = False

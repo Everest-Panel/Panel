@@ -4,7 +4,7 @@ RUN apt update && apt upgrade -y && apt install p7zip-full python3-full python3-
 
 RUN mkdir /setup
 WORKDIR /setup
-RUN python3 -m venv env && env/bin/python3 -m pip install docker --quiet
+RUN python3 -m venv env && env/bin/python3 -m pip install docker requests --quiet
 COPY stream.py stream.py
 RUN chmod +x stream.py
 

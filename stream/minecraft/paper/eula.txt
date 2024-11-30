@@ -1,1 +1,2 @@
+# Everest Minecraft Eula
 eula=true

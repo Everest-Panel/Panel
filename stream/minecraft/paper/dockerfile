@@ -3,7 +3,8 @@ FROM openjdk:21
 COPY startup.sh startup.sh
 RUN chmod +x startup.sh
 
-WORKDIR /server
-COPY eula.txt /server/eula.txt
+RUN mkdir -p /server
+RUN mkdir -p /server_files
+COPY eula.txt /server_files/eula.txt
 
 ENTRYPOINT ["/startup.sh"]

@@ -1,6 +1,6 @@
 frontend/app/private/api/resources/composer/vendor
-frontend/app/private/game_assets/assets
+frontend/app/private/game_assets/assets/
 docker-compose.yml
 stream/env
 mariadb/*
-stream/minecraft/paper/wbin
+stream/minecraft/paper/wbin/

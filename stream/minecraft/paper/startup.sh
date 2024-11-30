@@ -3,7 +3,7 @@
 # Startup Memory
 xms="-Xms${STARTUP_MEMORY:-1}G"
 # Max Memory
-xmx="-Xmx${MAX_MEMORY:-4}G"
+xmx="-Xmx${MAX_MEMORY:-2}G"
 # Version
 version="${VERSION:-1.12.2}"
 # Build

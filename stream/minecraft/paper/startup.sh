@@ -11,8 +11,14 @@ build="${BUILD:-1620}"
 # Link
 link="https://api.papermc.io/v2/projects/paper/versions/${version}/builds/${build}/downloads/paper-${version}-${build}.jar"
 
-if ! [ -f "/server/server.jar" ]; then
-    curl --output /server/server.jar $link
+cd /server
+
+if ! [ -f "server.jar" ]; then
+    curl --output server.jar $link
 fi
 
-java $xms $xmx -XX:+DisableExplicitGC -Dterminal.jline=false -Dterminal.ansi=true -jar /server/server.jar nogui
+if ! [ -f "eula.txt" ]; then
+    cp /server_files/eula.txt eula.txt
+fi
+
+java $xms $xmx -XX:+DisableExplicitGC -Dterminal.jline=false -Dterminal.ansi=true -jar server.jar nogui

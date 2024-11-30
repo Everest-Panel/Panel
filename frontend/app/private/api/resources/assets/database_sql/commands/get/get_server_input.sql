@@ -1,0 +1,1 @@
+Select Ports.uid, Streams.name as "Stream Name", Servers.name, Ports.port, Ports.prot from Ports inner join Streams on Streams.uid = Ports.stream_uid  inner join Servers on Servers.uid = Ports.server_uid  where Streams.token = "85a076a9e572aaf551df70afa05db2bcd9c55a3b9be8aec058ccec48e5298ea9b3090440765881397353ce5ce6e7d1fc"

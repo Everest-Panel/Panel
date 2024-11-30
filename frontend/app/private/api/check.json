@@ -1,5 +1,9 @@
 {
     "DATABASE_TABLES":[
-        "Users"
+        "Users",
+        "Streams",
+        "Ports",
+        "Servers",
+        "Server_Grants"
     ]
 }

@@ -1,0 +1,87 @@
+name: everest
+
+services:
+
+  frontend:
+    container_name: everest-frontend
+    build: frontend/.
+    image: everest/frontend:latest
+    restart: unless-stopped
+    volumes:
+      - <REPO_APP_DIR_ABS>:/app
+    depends_on:
+      - database
+    links:
+      - database
+    deploy:
+      resources:
+        limits:
+          cpus: "1"
+          memory: 1G
+    ports:
+      - "80:80/tcp"
+
+  stream_1:
+    container_name: everest-stream-1
+    build: stream/.
+    image: everest/stream:latest
+    restart: unless-stopped
+    tty: true
+    stdin_open: true
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+    environment:
+      - SITE=http://frontend
+      - TOKEN=
+    depends_on:
+      - database
+    links:
+      - database
+    deploy:
+      resources:
+        limits:
+          cpus: "1"
+          memory: 1G
+
+  stream_2:
+    container_name: everest-stream-2
+    build: stream/.
+    image: everest/stream:latest
+    restart: unless-stopped
+    tty: true
+    stdin_open: true
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+    environment:
+      - SITE=http://frontend
+      - TOKEN=
+    depends_on:
+      - database
+    links:
+      - database
+    deploy:
+      resources:
+        limits:
+          cpus: "1"
+          memory: 1G
+
+  database:
+    container_name: everest-database
+    image: mariadb:latest
+    restart: unless-stopped
+    volumes:
+      - <REPO_MARIADB_DIR_ABS>:/var/lib/mysql
+    environment:
+      - MARIADB_USER=Everest
+      - MARIADB_PASSWORD=EverestPassword1234*
+      - MARIADB_ROOT_PASSWORD=EverestRootPassword1234*
+      - MARIADB_DATABASE=Everest
+    deploy:
+      resources:
+        limits:
+          cpus: "1"
+          memory: 1G
+    ports:
+      - "6000:3306/tcp"
+
+  

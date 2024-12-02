@@ -1,1 +1,0 @@
-Insert into Streams (uid, token, name) values ("674aedacb36e6", "a2a2abed618d2074dfdd87d2f45e726fa8b3017cf6ad5b6fd17d919bbca907327535598bddcd2463cea01b981d625760", "Stream_Test_2")

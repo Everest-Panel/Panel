@@ -1,5 +1,7 @@
+-- Devon Edwards & Trent Miller
+-- Everest Panel
 create table Streams (
-    uid char(13) primary key, 
+    uuid char(36) primary key, 
     token char(96), 
     last_poll datetime, 
     name varchar(254)

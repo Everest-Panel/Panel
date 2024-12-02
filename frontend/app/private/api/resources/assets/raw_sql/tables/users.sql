@@ -1,9 +1,11 @@
+-- Devon Edwards & Trent Miller
+-- Everest Panel
 create table Users (
-    uid char(13) primary key, 
+    uuid char(36) primary key, 
     username varchar(40), 
     password char(128), 
     fname varchar(254), 
     lname varchar(254), 
     email varchar(254), 
-    creation datetime default now()
+    creation datetime default NOW()
 )

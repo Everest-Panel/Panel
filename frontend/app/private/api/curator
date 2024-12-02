@@ -1,4 +1,4 @@
-#!/bin/php8.2
+#!/bin/php
 
 <?php
 
@@ -29,7 +29,7 @@ catch (Exception | Error $e) {
         $config["DATABASE"]["PORT"] = 6000;
         $db = new Database($config["DATABASE"]);
     } catch (Exception | Error $e) {
-        echo sprintf("Database %Failed%s %sInternal%s & %sExternal%s", $color["red"], $color["reset"], $color["blue"], $color["reset"], $color["yellow"], $color["reset"]), PHP_EOL;
+        echo sprintf("Database %sFailed%s %sInternal%s & %sExternal%s", $color["red"], $color["reset"], $color["blue"], $color["reset"], $color["yellow"], $color["reset"]), PHP_EOL;
         exit();
     }
 }
